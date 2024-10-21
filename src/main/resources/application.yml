@@ -5,7 +5,4 @@ spring:
     oauth2:
       resourceserver:
         jwt:
-          jwk-set-uri: http://${OIDC_HOST}/realms/myrealm/protocol/openid-connect/certs
-
-server:
-  port: 9091
+          jwk-set-uri: http://${OIDC_HOST}/realms/${OIDC_REALM}/protocol/openid-connect/certs
