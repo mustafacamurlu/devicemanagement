@@ -6,3 +6,6 @@ spring:
       resourceserver:
         jwt:
           jwk-set-uri: http://${OIDC_HOST}/realms/${OIDC_REALM}/protocol/openid-connect/certs
+
+server:
+  port: ${DEVICEMANAGEMENT_PORT}
