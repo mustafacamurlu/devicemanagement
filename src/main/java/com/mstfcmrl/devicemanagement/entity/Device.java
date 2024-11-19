@@ -22,6 +22,9 @@ public class Device {
     @Column(nullable = false)
     private String vehicleType;
 
+    @Transient // This field won't be saved to the database
+    private String vehicleName;
+
     // Getters and setters
     public UUID getId() {
         return id;
@@ -61,5 +64,13 @@ public class Device {
 
     public void setVehicleType(String vehicleType) {
         this.vehicleType = vehicleType;
+    }
+
+    public String getVehicleName() {
+        return vehicleName;
+    }
+
+    public void setVehicleName(String vehicleName) {
+        this.vehicleName = vehicleName;
     }
 }

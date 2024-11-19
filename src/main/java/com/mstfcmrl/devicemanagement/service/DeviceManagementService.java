@@ -24,7 +24,11 @@ public class DeviceManagementService {
     }
 
     public Device getDeviceById(String id) {
-        return deviceRepository.findById(UUID.fromString(id)).orElseThrow(() -> new RuntimeException("Device not found"));
+
+        Device device = deviceRepository.findById(UUID.fromString(id))
+        .orElseThrow(() -> new RuntimeException("Device not found"));
+        device.setVehicleName("MyTruck");
+        return device;
     }
 
     public Device createDevice(Device device) {
